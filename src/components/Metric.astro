@@ -1,0 +1,35 @@
+---
+import type { Result } from '../data/content';
+
+interface Props {
+  result: Result;
+}
+const { result } = Astro.props;
+const isChange = 'before' in result;
+---
+
+<div>
+  {
+    isChange ? (
+      <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-extrabold tracking-tight tabular-nums">
+        <span class="text-2xl text-slate-400 sm:text-3xl dark:text-slate-500">
+          <span class="sr-only">from </span>
+          {result.before}
+        </span>
+        <span class="text-2xl text-slate-400 dark:text-slate-500" aria-hidden="true">→</span>
+        <span class="text-4xl text-accent sm:text-5xl dark:text-accent-dark">
+          <span class="sr-only">to </span>
+          {result.after}
+        </span>
+      </p>
+    ) : (
+      <p class="text-4xl font-extrabold tracking-tight tabular-nums text-accent sm:text-5xl dark:text-accent-dark">
+        {result.value}
+      </p>
+    )
+  }
+  <p class="mt-2 text-sm font-medium">
+    {result.label}
+    {result.period && <span class="font-normal text-muted"> · {result.period}</span>}
+  </p>
+</div>

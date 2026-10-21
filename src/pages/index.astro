@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Levers from '../components/Levers.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import FeaturedBuild from '../components/FeaturedBuild.astro';
+import HowIWork from '../components/HowIWork.astro';
+import Teaching from '../components/Teaching.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import { footer } from '../data/content';
+---
+
+<Base>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Levers />
+    <CaseStudies />
+    <FeaturedBuild />
+    <HowIWork />
+    <Teaching />
+    <About />
+    <Contact />
+  </main>
+  <footer class="bg-slate-950 text-sm text-slate-400">
+    <div class="container-page border-t border-slate-800 py-8">
+      <p>{footer.text}</p>
+    </div>
+  </footer>
+</Base>

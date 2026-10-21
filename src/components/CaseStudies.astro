@@ -1,0 +1,56 @@
+---
+import { caseStudies } from '../data/content';
+import Metric from './Metric.astro';
+import Tags from './Tags.astro';
+---
+
+<section id="work" class="section" aria-labelledby="work-title">
+  <div class="container-page">
+    <p class="eyebrow">{caseStudies.eyebrow}</p>
+    <h2 id="work-title" class="section-title">{caseStudies.title}</h2>
+
+    <div class="mt-12 space-y-6">
+      {
+        caseStudies.items.map((cs) => (
+          <article class="card grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+            <div>
+              <p class="text-sm font-semibold text-accent dark:text-accent-dark">
+                {cs.lever} · {cs.leverName}
+              </p>
+              <h3 class="mt-2 text-2xl font-bold tracking-tight">{cs.company}</h3>
+              <p class="mt-1 text-sm text-muted">{cs.context}</p>
+
+              <dl class="mt-8 space-y-6">
+                <div>
+                  <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">Problem</dt>
+                  <dd class="mt-2 leading-relaxed">{cs.problem}</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">What I did</dt>
+                  <dd class="mt-2 leading-relaxed">{cs.whatIDid}</dd>
+                </div>
+              </dl>
+
+              <Tags tags={cs.tags} class="mt-8" />
+            </div>
+
+            <div class="lg:border-l lg:border-slate-200 lg:pl-14 dark:lg:border-slate-800">
+              <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">Result</h4>
+              <ul class="mt-4 divide-y divide-slate-200 dark:divide-slate-800">
+                {cs.results.map((r) => (
+                  <li class="py-5 first:pt-2 last:pb-0">
+                    <Metric result={r} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mt-10 max-w-3xl border-l-4 border-accent pl-5 text-lg leading-relaxed text-muted dark:border-accent-dark">
+      {caseStudies.supportingLine}
+    </p>
+  </div>
+</section>

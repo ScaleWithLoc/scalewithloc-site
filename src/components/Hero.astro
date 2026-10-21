@@ -1,0 +1,44 @@
+---
+import { hero } from '../data/content';
+---
+
+<section id="top" class="container-page pt-14 pb-20 sm:pt-20 sm:pb-28" aria-labelledby="hero-title">
+  <div class="flex flex-col gap-10 md:flex-row-reverse md:items-center md:justify-between md:gap-16">
+    <img
+      src={hero.headshot.src}
+      alt={hero.headshot.alt}
+      width="640"
+      height="640"
+      fetchpriority="high"
+      class="size-36 shrink-0 rounded-full object-cover ring-4 ring-accent-soft sm:size-44 md:size-72 lg:size-80 dark:ring-slate-800"
+    />
+
+    <div class="max-w-2xl">
+      <p
+        class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300"
+      >
+        <span class="size-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+        {hero.badge}
+      </p>
+
+      <h1 id="hero-title" class="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+        {hero.headline}
+      </h1>
+
+      <p class="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
+        {hero.subheadline}
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href={hero.primaryCta.href} class="btn btn-primary">
+          {hero.primaryCta.label}
+          <svg class="size-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+            ><path fill-rule="evenodd" d="M10 3a1 1 0 0 1 1 1v9.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4L9 13.6V4a1 1 0 0 1 1-1Z" clip-rule="evenodd"
+            ></path></svg
+          >
+        </a>
+        <a href={hero.secondaryCta.href} class="btn btn-secondary">{hero.secondaryCta.label}</a>
+      </div>
+    </div>
+  </div>
+</section>

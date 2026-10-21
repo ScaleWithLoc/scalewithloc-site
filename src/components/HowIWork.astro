@@ -1,0 +1,29 @@
+---
+import { process } from '../data/content';
+---
+
+<section id="process" class="section" aria-labelledby="process-title">
+  <div class="container-page">
+    <p class="eyebrow">{process.eyebrow}</p>
+    <h2 id="process-title" class="section-title">{process.title}</h2>
+
+    <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+      {
+        process.steps.map((step, i) => (
+          <li class="relative lg:pr-8">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-accent text-base font-bold text-white dark:bg-accent-dark dark:text-slate-950">
+                {i + 1}
+              </span>
+              {i < process.steps.length - 1 && (
+                <span class="hidden h-0.5 flex-1 bg-gradient-to-r from-accent/50 to-accent/10 lg:block dark:from-accent-dark/50 dark:to-accent-dark/10" aria-hidden="true" />
+              )}
+            </div>
+            <p class="mt-4 text-xl font-bold">{step.title}</p>
+            <p class="mt-2 leading-relaxed text-muted">{step.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
