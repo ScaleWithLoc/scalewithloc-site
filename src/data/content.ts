@@ -15,7 +15,6 @@ export const links = {
   linkedin: 'https://www.linkedin.com/in/loc-lam',
   youtube: 'https://www.youtube.com/@ScaleWithLoc',
   youtubeHandle: '@ScaleWithLoc',
-  resume: '/resume.pdf', // file lives at public/resume.pdf
 };
 
 // ── SEO ──────────────────────────────────────────────────────
@@ -227,7 +226,7 @@ export const about = {
 // ── 8. Contact ───────────────────────────────────────────────
 export const contact = {
   title: "Let's talk about your team.",
-  resumeLabel: 'Download resume',
+  resumeNote: 'Resume available on request.',
 };
 
 export const footer = {

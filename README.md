@@ -22,7 +22,6 @@ npm run preview    # serve the built dist/ locally
 | Page order | `src/pages/index.astro` |
 | Colors / fonts | `src/styles/global.css` (`--color-accent`) |
 | Images | `public/images/` |
-| Resume | `public/resume.pdf` |
 | Social preview image | `public/og-image.png` (regenerate with `npm run og`) |
 
 Search `content.ts` for `TODO` to find remaining placeholders.
@@ -66,7 +65,6 @@ Notes:
 - **Teaching links:** fill in `href` for each item in `teaching.items`. An item
   with no link shows as a plain card.
 - **Email:** set `links.email`. The Email card appears once it's set.
-- **Resume:** put your PDF at `public/resume.pdf`.
 - **Headline or name changed?** Run `npm run og` to rebuild the social preview image.
 - **Domain:** update `site` in `astro.config.mjs` so social previews use absolute URLs.
 
